@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="test.css">
+    <title>home | corbo</title>
+  </head>
+  <body>
+    <main class="container">
+      <header class="flex-row flex-align-start-center">
+        <h1 class="flex-item">
+          <a class="brand" href="#">
+            <span class="text-turquoise">c</span><span class="text-orange">o</span><span class="text-turquoise">r</span><span class="text-yellow">b</span><span class="text-orange">o</span>
+          </a>
+        </h1>
+        <a href="#" class="menu-item">Home</a>
+        <a href="#" class="menu-item">Docs</a>
+        <a href="#" class="menu-item">FAQ</a>
+      </header>
+      <h2>Rows</h2>
+      <section>
+        <h3>flex-row</h3>
+        <div class="flex-row">
+          <div class="flex-item bg-orange">flex-item</div>
+          <div class="flex-item bg-yellow">flex-item</div>
+          <div class="flex-item bg-turquoise">flex-item</div>
+        </div>
+      </section>
+
+      <section>
+        <h3>flex-row</h3>
+        <div class="flex-row">
+          <div class="bg-orange flex-item">flex-item</div>
+          <div class="bg-yellow"></div>
+          <div class="bg-turquoise"></div>
+        </div>
+      </section>
+
+      <h2>Columns</h2><section>
+        <h3>flex-col</h3>
+        <div class="flex-col">
+          <div class="flex-item bg-orange">flex-item</div>
+          <div class="flex-item bg-yellow">flex-item</div>
+          <div class="flex-item bg-turquoise">flex-item</div>
+        </div>
+      </section>
+
+      <section>
+        <h3>flex-col + height: 200px</h3>
+        <div class="flex-col" style="height: 200px">
+          <div class="bg-orange"></div>
+          <div class="bg-yellow flex-item">flex-item</div>
+          <div class="bg-turquoise"></div>
+        </div>
+      </section>
+
+      <h2>Grids</h2>
+      <section>
+        <h3>flex-grid-3</h3>
+        <div class="flex-row flex-grid-3">
+          <div class="bg-turquoise flex-item-1">flex-item-1</div>
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+          <div class="bg-orange flex-item-3">flex-item-3</div>
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+          <div class="bg-turquoise flex-item-1">flex-item-1</div>
+          <div class="bg-orange flex-item-1">flex-item-1</div>
+          <div class="bg-turquoise flex-item-1">flex-item-1</div>
+          <div class="bg-yellow flex-item-1">flex-item-1</div>
+        </div>
+      </section>
+
+      <section>
+        <h3>flex-grid-12</h3>
+        <div class="flex-row flex-grid-12">
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+          <div class="bg-orange flex-item-4">flex-item-4</div>
+          <div class="bg-turquoise flex-item-3">flex-item-3</div>
+          <div class="bg-orange flex-item-3">flex-item-3</div>
+          <div class="bg-turquoise flex-item-6">flex-item-6</div>
+          <div class="bg-orange flex-item-2">flex-item-2</div>
+          <div class="bg-yellow flex-item-4">flex-item-4</div>
+          <div class="bg-orange flex-item-5">flex-item-5</div>
+          <div class="bg-yellow flex-item-4">flex-item-4</div>
+          <div class="bg-turquoise flex-item-3">flex-item-3</div>
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+          <div class="bg-turquoise flex-item-2">flex-item-2</div>
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+          <div class="bg-turquoise flex-item-2">flex-item-2</div>
+          <div class="bg-orange flex-item-2">flex-item-2</div>
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+        </div>
+      </section>
+
+      <h2>Spacing</h2>
+      <section>
+        <h3>flex-grid-12 flex-spacing-1</h3>
+        <div class="flex-row flex-grid-12 flex-spacing-1">
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+          <div class="bg-orange flex-item-4">flex-item-4</div>
+          <div class="bg-turquoise flex-item-3">flex-item-3</div>
+          <div class="bg-orange flex-item-3">flex-item-3</div>
+          <div class="bg-turquoise flex-item-6">flex-item-6</div>
+          <div class="bg-orange flex-item-2">flex-item-2</div>
+          <div class="bg-yellow flex-item-4">flex-item-4</div>
+          <div class="bg-orange flex-item-5">flex-item-5</div>
+          <div class="bg-yellow flex-item-4">flex-item-4</div>
+          <div class="bg-turquoise flex-item-3">flex-item-3</div>
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+          <div class="bg-turquoise flex-item-2">flex-item-2</div>
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+          <div class="bg-turquoise flex-item-2">flex-item-2</div>
+          <div class="bg-orange flex-item-2">flex-item-2</div>
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+        </div>
+      </section>
+
+      <section>
+        <h3>flex-grid-3 flex-spacing-2</h3>
+        <div class="flex-row flex-grid-3 flex-spacing-2">
+          <div class="bg-turquoise flex-item-1">flex-item-1</div>
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+          <div class="bg-orange flex-item-3">flex-item-3</div>
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+          <div class="bg-turquoise flex-item-1">flex-item-1</div>
+          <div class="bg-orange flex-item-1">flex-item-1</div>
+          <div class="bg-turquoise flex-item-1">flex-item-1</div>
+          <div class="bg-yellow flex-item-1">flex-item-1</div>
+        </div>
+      </section>
+
+      <section>
+        <h3>flex-row flex-spacing-1</h3>
+        <div class="flex-row flex-spacing-1">
+          <div class="bg-orange flex-item">flex-item</div>
+          <div class="bg-yellow flex-item">flex-item</div>
+          <div class="bg-turquoise flex-item">flex-item</div>
+        </div>
+      </section>
+
+      <section>
+        <h3>flex-col flex-spacing-1</h3>
+        <div class="flex-col flex-spacing-1">
+          <div class="bg-orange flex-item">flex-item</div>
+          <div class="bg-yellow flex-item">flex-item</div>
+          <div class="bg-turquoise flex-item">flex-item</div>
+        </div>
+      </section>
+
+      <h2>Alignments</h2>
+      <section>
+        <h3>flex-grid-4 flex-align-between-start</h3>
+        <div class="flex-grid-4 flex-align-between-start">
+          <div class="bg-orange flex-item-1">flex-item-1</div>
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+          <div class="bg-turquoise flex-item-3">flex-item-3</div>
+          <div class="bg-yellow flex-item-2">flex-item-2</div>
+          <div class="bg-orange flex-item-1">flex-item-1</div>
+        </div>
+      </section>
+      <section>
+        <h3>flex-row flex-align-center + height: 144px</h3>
+        <div class="flex-row flex-align-center" style="height: 9rem">
+          <div class="bg-orange"></div>
+          <div class="bg-yellow"></div>
+          <div class="bg-turquoise"></div>
+        </div>
+      </section>
+      <section>
+        <h3>flex-row flex-align-between-end + height: 144px</h3>
+        <div class="flex-row flex-align-between-end" style="height: 9rem">
+          <div class="bg-orange"></div>
+          <div class="bg-yellow"></div>
+          <div class="bg-turquoise"></div>
+        </div>
+      </section>
+      <section>
+        <h3>flex-col flex-align-start-end</h3>
+        <div class="flex-col flex-align-start-end">
+          <div class="bg-orange"></div>
+          <div class="bg-yellow"></div>
+          <div class="bg-turquoise"></div>
+        </div>
+      </section>
+
+      <h2>Nesting</h2>
+      <section>
+        <h3>flex-row flex-spacing-1 > flex-item flex-col flex-spacing-1</h3>
+        <div class="flex-row flex-spacing-1">
+          <div class="flex-item flex-col flex-spacing-1">
+            <div class="bg-orange"></div>
+            <div class="bg-orange"></div>
+            <div class="bg-orange"></div>
+          </div>
+          <div class="flex-item flex-col flex-spacing-1">
+            <div class="bg-yellow"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-yellow"></div>
+          </div>
+          <div class="flex-item flex-col flex-spacing-1">
+            <div class="bg-turquoise"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-turquoise"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

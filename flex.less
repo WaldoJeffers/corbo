@@ -1,0 +1,119 @@
+@col-count: 12;
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-col, .flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-col.fl-stretch, .flex-column.fl-stretch{
+  height: 100%; /* Chrome calculates heights in percentages relatively to its parent SPECIFIED height. If it not specified, the instruction is ignored. Affects children's flex-basis */
+}
+
+
+.flex-item{
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0; /* To prevent Chrome's bug with child item and heights in percentages */
+}
+
+// .flex-row-4 > * {
+//   --col-width: attr(data-col-width);
+//   --margin:  ~"calc((100% - 4*var(--col-width))/6)";
+//   --margin: attr(width);
+//   margin-left: var(--margin);
+//   margin-right: var(--margin);
+// }
+
+.flex-item-1{flex-basis: 100%}
+.flex-item-2{flex-basis: 50%}
+.flex-item-3{flex-basis: 33.33%}
+.flex-item-4{flex-basis: 25%}
+.flex-item-5{flex-basis: 20%}
+.flex-item-6{flex-basis: 16.66%}
+.flex-item-7{flex-basis: 14.29%}
+.flex-item-8{flex-basis: 12.5%}
+
+.flex-item-span-1{flex-basis: 8.33%}
+.flex-item-span-2{flex-basis: 16.66%}
+.flex-item-span-3{flex-basis: 25%}
+.flex-item-span-4{flex-basis: 33.33%}
+.flex-item-span-5{flex-basis: 41.66%}
+.flex-item-span-6{flex-basis: 50%}
+.flex-item-span-7{flex-basis: 58.33%}
+.flex-item-span-8{flex-basis: 66.66%}
+.flex-item-span-9{flex-basis: 75%}
+.flex-item-span-10{flex-basis: 83.33%}
+.flex-item-span-11{flex-basis: 91.66%}
+.flex-item-span-12{flex-basis: 100%}
+
+.flex-item-10{flex-basis: 10%}
+.flex-item-20{flex-basis: 20%}
+.flex-item-30{flex-basis: 30%}
+.flex-item-40{flex-basis: 40%}
+.flex-item-50{flex-basis: 50%}
+.flex-item-60{flex-basis: 60%}
+.flex-item-70{flex-basis: 70%}
+.flex-item-80{flex-basis: 80%}
+.flex-item-90{flex-basis: 90%}
+
+.flex-align-center, .flex-align-center-center{
+  align-items: center; /* cross-axis */
+  justify-content: center; /* main-axis */
+}
+
+.flex-align-center-start{
+  align-items: flex-start; /* cross-axis */
+  justify-content: center; /* main-axis */
+}
+
+.flex-align-stretch-center{
+  align-items: center;
+  justify-content: stretch;
+}
+
+.flex-align-start-start, .flex-align-start{
+  align-items: flex-start; /* cross-axis */
+  justify-content: flex-start; /* main-axis */
+}
+
+.flex-align-start-center{
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flex-align-start-end{
+  align-items: flex-end; /* cross-axis */
+  justify-content: flex-start; /* main-axis */
+}
+
+.flex-align-end-start{
+  align-items: flex-start; /* cross-axis */
+  justify-content: flex-end; /* main-axis */
+}
+
+.flex-item-align-end{
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.flex-item-align-center{
+  align-self: center;
+}
+
+.flex-item-align-stretch{
+  align-self: stretch;
+}
+
+.flex-spacing-1 > *{
+  margin-right: 1rem;
+}
+
+.flex-spacing-1 > *:last-child{
+  margin-right: 0;
+}

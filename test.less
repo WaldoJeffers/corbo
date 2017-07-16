@@ -1,0 +1,118 @@
+@prefix: flex;
+@grid-sizes: 3, 4, 12;
+@grid-spacings: 0, 1, 2;
+@justify-content-list:
+  start flex-start,
+  end flex-end,
+  center center,
+  between space-between,
+  around space-around;
+
+@align-items-list:
+  start flex-start,
+  end flex-end,
+  center center,
+  stretch stretch;
+
+@breakpoints:
+  phone 576px,
+  tablet 768px,
+  laptop 992px,
+  desktop 1200px;
+
+.make-flex-align(@justify-content-key, @justify-content-value, @justify-content-key, @align-items-value) when (@justify-content-key = @align-items-key){
+  .flex-align-@{justify-content-key}{
+    &, &-@{align-items-key}{
+      justify-content: @justify-content-value;
+      align-items: @align-items-value;
+    }
+  }
+}
+
+.make-flex-align(@justify-content-key, @justify-content-value, @align-items-key, @align-items-value) when (default()){
+  .flex-align-@{justify-content-key}-@{align-items-key}{
+    justify-content: @justify-content-value;
+    align-items: @align-items-value;
+  }
+}
+
+.@{prefix}-{
+  &col, &column, &row, {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &col{flex-direction: column}
+  &row{flex-direction: row}
+  &item{flex: auto}
+}
+
+[class*="@{prefix}-grid"] {
+  display: flex;
+  flex-wrap: wrap;
+  > *{flex: none}
+}
+
+// flex-item mixin
+.flex-item(@i, @n, 0){
+  width: (@i * 100% / @n);
+}
+
+.flex-item(@i, @n, @spacing) when(default()){
+  width: calc( (@i * 100% / @n) ~"- @{spacing}rem");
+}
+
+.make-flex-grid-item(@i, @size, 0, @step) when(@step = @i){
+  .flex-grid-@{size} > *, .flex-grid-@{size} > .flex-item-@{i} {
+    .flex-item(@i, @size, 0)
+  }
+}
+
+.make-flex-grid-item(@i, @size, 0, @step) when(@i > @step){
+  .flex-grid-@{size} > .flex-item-@{i}{
+    .flex-item(@i, @size, 0)
+  }
+}
+
+.make-flex-grid-item(@i, @size, @spacing, @step) when(@step = @i) and (@spacing > 0){
+  .flex-grid-@{size}.flex-spacing-@{spacing} > *, .flex-grid-@{size}.flex-spacing-@{spacing} > .flex-item-@{i} {
+    .flex-item(@i, @size, @spacing)
+  }
+}
+
+.make-flex-grid-item(@i, @size, @spacing, @step) when(default()){
+  .flex-grid-@{size}.flex-spacing-@{spacing} > .flex-item-@{i} {
+    .flex-item(@i, @size, @spacing)
+  }
+}
+
+.for-each(@spacing in @grid-spacings) when (@spacing > 0){
+  .flex-spacing-@{spacing} > *{
+    margin: unit(@spacing / 2, rem);
+  }
+}
+
+.for-each(@size in @grid-sizes){
+  .for-each(@spacing in @grid-spacings){
+    .for(@i, @end: @size){
+      .make-flex-grid-item(@i * 1, @size, @spacing, 1)
+    }
+  }
+}
+
+.for-each(@justify-content in @justify-content-list){
+  .for-each(@align-items in @align-items-list){
+    @justify-content-key: extract(@justify-content, 1);
+    @justify-content-value: extract(@justify-content, 2);
+    @align-items-key: extract(@align-items, 1);
+    @align-items-value: extract(@align-items, 2);
+    .make-flex-align(@justify-content-key, @justify-content-value, @align-items-key, @align-items-value)
+  }
+}
+
+.for-each(@breakpoint in @breakpoints){
+  @breakpoint-key: extract(@breakpoint, 1);
+  @breakpoint-value: extract(@breakpoint, 2);
+  @media (min-width: @breakpoint-value){
+    .container {width: 1320px}
+  }
+}
