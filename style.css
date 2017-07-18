@@ -30,6 +30,13 @@
   src: local('Avenir Next LT Pro Bold'), url('fonts/AvenirNextLTPro/AvenirNextLTPro-Bold.woff') format('woff');
 }
 
+*{box-sizing: border-box}
+
+a{
+  color: darkslategray;
+  text-decoration: none;
+}
+
 body{
   font-family: 'Avenir Next LT Pro';
 }
@@ -50,6 +57,15 @@ h1{
   display: inline-block;
   transform: translateY(-16px);
 }
+
+.resizable{
+  overflow: hidden;
+  resize: horizontal;
+  max-width: 100%;
+  width: 100%;
+}
+
+.resizable:active{width: 0}
 
 h3{
   text-transform: uppercase;
@@ -87,9 +103,7 @@ section {
 
 section > div[class*="flex-spacing"] > div{border-radius: 2px}
 
-*{
-  box-sizing: border-box;
-}
+ul{padding-left: 1rem}
 
 .text-turquoise{color: mediumturquoise}
 .text-orange{color: lightsalmon}
@@ -99,25 +113,37 @@ section > div[class*="flex-spacing"] > div{border-radius: 2px}
 .bg-yellow{background-color: wheat}
 
 .menu-item{
-  color: darkslategray;
-  text-decoration: none;
   margin-left: 2.5rem;
   text-transform: lowercase;
   font-weight: 700;
   font-size: 1.15rem;
 }
 
-.menu-item:first-of-type:hover{
-  color: lightsalmon;
+.menu-item:first-of-type:hover, .menu-item:first-of-type.active{color: lightsalmon}
+.menu-item:nth-of-type(2):hover, .menu-item:nth-of-type(2).active{color: wheat}
+.menu-item:nth-of-type(3):hover, .menu-item:nth-of-type(3).active{color: mediumturquoise}
+
+.side-nav{
+  align-self: flex-start;
+  position: sticky;
+  top: 2rem;
+  border-left: 1px solid #999;
+  /*text-align: right;*/
 }
 
-.menu-item:nth-of-type(2):hover{
-  color: wheat;
-}.menu-item:nth-of-type(3):hover{
-  color: mediumturquoise;
+.side-nav a{
+  display: block;
 }
 
-@media (min-width: 576px){
+.nav-1 > a{
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+.nav-2 > a{
+  margin: 0.25rem 0;
+}
+
+@media (min-width: 568px){
   .container {width: 540px}
 }
 @media (min-width: 768px){
