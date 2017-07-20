@@ -2,6 +2,6 @@
 A colorful CSS flexbox grid library.
 
 ## Installation
-npm install --save corbo
+```npm install --save corbo```
 
 ## Usage

@@ -143,6 +143,8 @@ ul{padding-left: 1rem}
   margin: 0.25rem 0;
 }
 
+.nav-2 > a:target{font-weight: 600}
+
 @media (min-width: 568px){
   .container {width: 540px}
 }

@@ -19,83 +19,220 @@
         <a class="menu-item active">Docs</a>
         <a href="#" class="menu-item">FAQ</a>
       </header>
-      <div class="flex-row">
+      <div class="flex-row flex-nowrap">
         <div class="flex-item">
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
-          <div>c</div>
+          <h2 id="getting_started">Getting started</h2>
+          <h3 id="getting_started-installation">Installation</h2>
+          Install corbo via npm:
+          <pre>npm install --save corbo</pre>
+          <p>and import it in your app if you use a module bundler (like Webpack, or Rollup).</p>
+          <pre>import from 'corbo'</pre>
+          <h2 id="components">Components</h2>
+          <p>With corbo, you define components using CSS classes. For example, this will define a simple row:</p>
+          <pre>&lt;div class="flex-row"&gt;&lt;/div&gt;</pre>
+        <p>There are only a handful components in corbo, but they will allow you to make the most complex layouts in the simplest way. Let's get started with the containers.</p>
+          <h3 id="components-row">Row</h3>
+          <p>A row is a simple container which stack its children in a row, forming columns.</p>
+          <pre>&lt;div class="flex-row"&gt;&lt;/div&gt;</pre>
+          <p>Inside a row, there is no CSS class to add to the row's children. Every child will stack in the row, taking only the space required by its content.</p>
+            <div class="flex-row">
+            <div class="bg-turquoise">c</div>
+            <div class="bg-yellow">o</div>
+            <div class="bg-orange">r</div>
+            <div class="bg-yellow">b</div>
+            <div class="bg-orange">o</div>
+          </div>
+          <pre>
+&lt;div class="flex-row"&gt;
+  &lt;div&gt;c&lt;/div&gt;
+  &lt;div&gt;o&lt;/div&gt;
+  &lt;div&gt;r&lt;/div&gt;
+  &lt;div&gt;b&lt;/div&gt;
+  &lt;div&gt;o&lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+        <p>However, if you want one or several of the row's children to take as much space as available, just add the <code>flex-item</code> class to them.</p>
+          <div class="flex-row">
+            <div class="bg-turquoise">c</div>
+            <div class="bg-yellow flex-item">o</div>
+            <div class="bg-orange">r</div>
+            <div class="bg-yellow">b</div>
+            <div class="bg-orange flex-item">o</div>
+          </div>
+          <pre>
+&lt;div class="flex-row"&gt;
+  &lt;div&gt;c&lt;/div&gt;
+  &lt;div class="flex-item"&gt;o&lt;/div&gt;
+  &lt;div&gt;r&lt;/div&gt;
+  &lt;div&gt;b&lt;/div&gt;
+  &lt;div class="flex-item"&gt;o&lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+          <h3 id="components-column">Column</h3>
+          <p>A column is equivalent to a row, the only difference residing in items stacking vertically instead of horizontally. It is declared using the <code>flex-column</code> (or <code>flex-col</code>) class.</p>
+          <pre>&lt;div class="flex-row"&gt;&lt;/div&gt;</pre>
+          <p>Like a row's children, a column's children don't need any special class to work.</p>
+          <div class="flex-col">
+            <div class="bg-turquoise">c</div>
+            <div class="bg-yellow">o</div>
+            <div class="bg-orange">r</div>
+            <div class="bg-yellow">b</div>
+            <div class="bg-orange">o</div>
+          </div>
+          <pre>
+&lt;div class="flex-col"&gt;
+  &lt;div&gt;c&lt;/div&gt;
+  &lt;div&gt;o&lt;/div&gt;
+  &lt;div&gt;r&lt;/div&gt;
+  &lt;div&gt;b&lt;/div&gt;
+  &lt;div&gt;o&lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+          <p>Also like the row container, if you need one of the column's children to take as much as possible, just add a <code>flex-item</code> class to it. However, as block elements have they height property set to <code>auto</code> by default, <strong>adding this class will have no effect if the column does not have a custom height</strong>.</p>
+          <div class="flex-col" style="height: 300px">
+            <div class="bg-turquoise">c</div>
+            <div class="bg-yellow flex-item">o</div>
+            <div class="bg-orange">r</div>
+            <div class="bg-yellow">b</div>
+            <div class="bg-orange flex-item">o</div>
+          </div>
+          <pre>
+&lt;div class="flex-col" style="height: 300px"&gt;
+  &lt;div&gt;c&lt;/div&gt;
+  &lt;div class="flex-item"&gt;o&lt;/div&gt;
+  &lt;div&gt;r&lt;/div&gt;
+  &lt;div&gt;b&lt;/div&gt;
+  &lt;div class="flex-item"&gt;o&lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+          <h3 id="components-grid">Grid</h3>
+          <p>A grid is a component which allows you to have control over the size and the number of items per line to be displayed. Contrary to a row or a column, which just stack items on the same line, a grid will let you define how many items should be displayed before wrapping, and how much space they should take. It's perfect for designing a global layout, or displaying an image gallery. A grid is defined using the <code>flex-grid-{ITEMS_PER_LINE}</code>, where <code>ITEMS_PER_LINE</code> is the number of items each line will have.</p>
+          <pre>&lt;div class="flex-grid-3"&gt;&lt;/div&gt;</pre>
+          <p>Like a row or a column's children, a grid's children do not need any special CSS class. Each child will take <code>1/ITEMS_PER_LINE</code> of the grid's available space.</p>
+          <div class="flex-row flex-grid-3">
+            <div class="bg-orange"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-orange"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-orange"></div>
+          </div>
+          <pre>
+&lt;div class="flex-row flex-grid-3"&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+          <p>You can create a grid of any size, by changing <code>ITEMS_PER_LINE</code>. The idea behing that is to avoid any useless mental calculation. If you have a design which features 3 columns, why would you need to create 3 <code>col-4</code> columns? Many other CSS frameworks use a 12 columns grid, but some even use a 24 columns, like Ant Design. This is unnecessary, and makes your code harder to understand. If you want to use non-standard grid sizes, like 24, or even 100, if you need to think in percentages, you might need to <a href="#customization">customize</a> corbo to generate the necessary code. Default sizes include 2, 3, 4, 12 columns.</p>
+          <div class="flex-grid-12">
+            <div class="bg-orange"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-orange"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-orange"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-orange"></div>
+            <div class="bg-yellow"></div>
+
+            <div class="bg-yellow"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-orange"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-orange"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-orange"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-orange"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-orange"></div>
+
+            <div class="bg-turquoise"></div>
+            <div class="bg-orange"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-orange"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-turquoise"></div>
+            <div class="bg-orange"></div>
+            <div class="bg-yellow"></div>
+            <div class="bg-turquoise"></div>
+          </div>
+          <pre>
+&lt;div class="flex-grid-12"&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+          <p>If you need to have items of different sizes inside your grid, that's easy! Just add a <code>flex-item-{ITEM_SIZE}</code> where <code>ITEM_SIZE</code> is an integer between 1 and <code>GRID_SIZE</code>. The item on which you apply the class will logically take <code>ITEM_SIZE/GRID_SIZE</code> of the grid's available space. The <code>flex-item-1</code> class corresponds to the default size for items on which you do no not specify a class.</p>
         </div>
         <nav class="side-nav">
           <ul class="nav-1">
             <a href="#introduction">Introduction</a>
-            <a href="#installation">Installation</a>
+            <a href="#getting_started">
+              Getting started
+              <ul class="nav-2">
+                <a href="#getting_started-installation">Installation</a>
+                <a href="#getting_started-usage">Usage</a>
+              </ul>
+            </a>
+            <a href="#customization">Customization</a>
             <a href="#components">
               Components
               <ul class="nav-2">
-                <a href="#row">Row</a>
-                <a href="#column">Column</a>
-                <a href="#grid">Grid</a>
-                <a href="#rows">Rows</a>
+                <a id="components-row" href="#components-row">Row</a>
+                <a href="#components-column">Column</a>
+                <a href="#components-grid">Grid</a>
               </ul>
             </a>
             <a href="#support">Support</a>

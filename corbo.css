@@ -4,8 +4,12 @@
   display: flex;
   flex-wrap: wrap;
 }
-.flex-col {
+.flex-col,
+.flex-column {
   flex-direction: column;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
 }
 .flex-row {
   flex-direction: row;
