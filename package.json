@@ -1,8 +1,8 @@
 {
-  "name": "flex",
+  "name": "corbo",
   "version": "1.0.0",
   "description": "A colorful CSS flexbox grid library.",
-  "main": "index.js",
+  "main": "corbo.css",
   "scripts": {
     "build": "lessc -lists corbo.less docs/corbo.css",
     "test": "echo \"Error: no test specified\" && exit 1"
