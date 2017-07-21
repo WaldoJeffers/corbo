@@ -119,6 +119,9 @@ ul{padding-left: 1rem}
   font-size: 1.15rem;
 }
 
+.menu-item-img{line-height: 0}
+.menu-item-img img{width: 1.15rem}
+
 .menu-item:first-of-type:hover, .menu-item:first-of-type.active{color: lightsalmon}
 .menu-item:nth-of-type(2):hover, .menu-item:nth-of-type(2).active{color: wheat}
 .menu-item:nth-of-type(3):hover, .menu-item:nth-of-type(3).active{color: mediumturquoise}
