@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "lessc -lists corbo.less corbo.css",
+    "build": "lessc -lists corbo.less docs/corbo.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
