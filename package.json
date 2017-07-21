@@ -1,16 +1,30 @@
 {
   "name": "flex",
   "version": "1.0.0",
-  "description": "",
+  "description": "A colorful CSS flexbox grid library.",
   "main": "index.js",
   "scripts": {
     "build": "lessc -lists corbo.less docs/corbo.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Waldo Jeffers",
+  "license": "MIT",
   "devDependencies": {
     "less": "^2.7.2"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "less-plugin-lists": "^1.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WaldoJeffers/corbo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WaldoJeffers/corbo/issues"
+  },
+  "homepage": "https://github.com/WaldoJeffers/corbo#readme"
 }
