@@ -18,64 +18,89 @@
         <a class="menu-item active">Home</a>
         <a href="docs.html" class="menu-item">Docs</a>
         <a href="#" class="menu-item">FAQ</a>
-	<a href="https://github.com/WaldoJeffers/corbo" class="menu-item menu-item-img"><img src="img/github.svg"></a>
+	      <a href="https://github.com/WaldoJeffers/corbo" class="menu-item menu-item-img"><img src="img/github.svg"></a>
       </header>
-
       <h2>Rows</h2>
-      <section>
-        <h3>flex-row</h3>
-        <div class="flex-row">
-          <div class="flex-item bg-orange">flex-item</div>
-          <div class="flex-item bg-yellow">flex-item</div>
-          <div class="flex-item bg-turquoise">flex-item</div>
+      <section class="card-container">
+        <button class="card flip-card btn-ghost text-turquoise" type="button">&gt;_</button>
+        <div class="card">
+          <div class="front">
+            <h3 class="flex-item">flex-row</h3>
+            <div class="flex-row">
+              <div class="flex-item bg-orange">flex-item</div>
+              <div class="flex-item bg-yellow">flex-item</div>
+              <div class="flex-item bg-turquoise">flex-item</div>
+            </div>
+          </div>
+          <div class="back">
+            <button type="button" class="btn-ghost close">&times;</button>
+            <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-row"</span>&gt;
+  <span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">flex-item</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">flex-item</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">flex-item</span>&lt;/div&gt;</span>
+&lt;/div&gt;</span></pre>
+          </div>
         </div>
       </section>
 
-      <section>
-        <h3>flex-row</h3>
-        <div class="flex-row">
-          <div class="bg-orange flex-item">flex-item</div>
-          <div class="bg-yellow"></div>
-          <div class="bg-turquoise"></div>
-        </div>
-      </section>
-
-      <h2>Columns</h2><section>
-        <h3>flex-col</h3>
-        <div class="flex-col">
-          <div class="flex-item bg-orange">flex-item</div>
-          <div class="flex-item bg-yellow">flex-item</div>
-          <div class="flex-item bg-turquoise">flex-item</div>
-        </div>
-      </section>
-
-      <section>
-        <h3>flex-col + height: 200px</h3>
-        <div class="flex-col" style="height: 200px">
-          <div class="bg-orange"></div>
-          <div class="bg-yellow flex-item">flex-item</div>
-          <div class="bg-turquoise"></div>
-        </div>
+      <h2>Columns</h2>
+      <section class="card-container">
+        <button class="card flip-card btn-ghost text-turquoise" type="button">&gt;_</button>
+        <div class="card">
+          <div class="front">
+            <h3>flex-col</h3>
+            <div class="flex-col">
+              <div class="flex-item bg-orange">flex-item</div>
+              <div class="flex-item bg-yellow">flex-item</div>
+              <div class="flex-item bg-turquoise">flex-item</div>
+            </div>
+          </div>
+          <div class="back">
+            <button type="button" class="btn-ghost close">&times;</button>
+            <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-col"</span>&gt;
+  <span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">flex-item</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">flex-item</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">flex-item</span>&lt;/div&gt;</span>
+&lt;/div&gt;</span></pre>
+          </div>
       </section>
 
       <h2>Grids</h2>
-      <section>
-        <h3>flex-grid-3</h3>
-        <div class="flex-row flex-grid-3">
-          <div class="bg-turquoise flex-item-1">flex-item-1</div>
-          <div class="bg-yellow flex-item-2">flex-item-2</div>
-          <div class="bg-orange flex-item-3">flex-item-3</div>
-          <div class="bg-yellow flex-item-2">flex-item-2</div>
-          <div class="bg-turquoise flex-item-1">flex-item-1</div>
-          <div class="bg-orange flex-item-1">flex-item-1</div>
-          <div class="bg-turquoise flex-item-1">flex-item-1</div>
-          <div class="bg-yellow flex-item-1">flex-item-1</div>
+      <section class="card-container">
+        <button class="card flip-card btn-ghost text-turquoise" type="button">&gt;_</button>
+        <div class="card">
+          <div class="front">
+            <h3>flex-grid-3</h3>
+            <div class="flex-grid-3">
+              <div class="bg-turquoise flex-item-1">flex-item-1</div>
+              <div class="bg-yellow flex-item-2">flex-item-2</div>
+              <div class="bg-orange flex-item-3">flex-item-3</div>
+              <div class="bg-yellow flex-item-2">flex-item-2</div>
+              <div class="bg-turquoise flex-item-1">flex-item-1</div>
+              <div class="bg-orange flex-item-1">flex-item-1</div>
+              <div class="bg-turquoise flex-item-1">flex-item-1</div>
+              <div class="bg-yellow flex-item-1">flex-item-1</div>
+            </div>
+          </div>
+          <div class="back">
+            <button type="button" class="btn-ghost close">&times;</button>
+            <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-grid-3"</span>&gt;
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-3"</span>&gt;</span><span class="text-gray">flex-item-3</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+&lt;/div&gt;</pre>
+          </div>
         </div>
       </section>
 
-      <section>
+      <!-- <section class="card-container">
         <h3>flex-grid-12</h3>
-        <div class="flex-row flex-grid-12">
+        <div class="flex-grid-12">
           <div class="bg-yellow flex-item-2">flex-item-2</div>
           <div class="bg-orange flex-item-4">flex-item-4</div>
           <div class="bg-turquoise flex-item-3">flex-item-3</div>
@@ -93,34 +118,91 @@
           <div class="bg-orange flex-item-2">flex-item-2</div>
           <div class="bg-yellow flex-item-2">flex-item-2</div>
         </div>
-      </section>
+      </section> -->
 
       <h2>Spacing</h2>
-      <section>
-        <h3>flex-grid-12 flex-spacing-1</h3>
-        <div class="flex-row flex-grid-12 flex-spacing-1">
-          <div class="bg-yellow flex-item-2">flex-item-2</div>
-          <div class="bg-orange flex-item-4">flex-item-4</div>
-          <div class="bg-turquoise flex-item-3">flex-item-3</div>
-          <div class="bg-orange flex-item-3">flex-item-3</div>
-          <div class="bg-turquoise flex-item-6">flex-item-6</div>
-          <div class="bg-orange flex-item-2">flex-item-2</div>
-          <div class="bg-yellow flex-item-4">flex-item-4</div>
-          <div class="bg-orange flex-item-5">flex-item-5</div>
-          <div class="bg-yellow flex-item-4">flex-item-4</div>
-          <div class="bg-turquoise flex-item-3">flex-item-3</div>
-          <div class="bg-yellow flex-item-2">flex-item-2</div>
-          <div class="bg-turquoise flex-item-2">flex-item-2</div>
-          <div class="bg-yellow flex-item-2">flex-item-2</div>
-          <div class="bg-turquoise flex-item-2">flex-item-2</div>
-          <div class="bg-orange flex-item-2">flex-item-2</div>
-          <div class="bg-yellow flex-item-2">flex-item-2</div>
+      <section class="card-container">
+        <button class="card flip-card btn-ghost text-turquoise" type="button">&gt;_</button>
+        <div class="card">
+          <div class="front">
+            <h3>flex-grid-3</h3>
+            <div class="flex-grid-3 flex-spacing-1">
+              <div class="bg-turquoise flex-item-1">flex-item-1</div>
+              <div class="bg-yellow flex-item-2">flex-item-2</div>
+              <div class="bg-orange flex-item-3">flex-item-3</div>
+              <div class="bg-yellow flex-item-2">flex-item-2</div>
+              <div class="bg-turquoise flex-item-1">flex-item-1</div>
+              <div class="bg-orange flex-item-1">flex-item-1</div>
+              <div class="bg-turquoise flex-item-1">flex-item-1</div>
+              <div class="bg-yellow flex-item-1">flex-item-1</div>
+            </div>
+          </div>
+          <div class="back">
+            <button type="button" class="btn-ghost close">&times;</button>
+            <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-grid-3 flex-spacing-1"</span>&gt;
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-3"</span>&gt;</span><span class="text-gray">flex-item-3</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+&lt;/div&gt;</pre>
+          </div>
         </div>
       </section>
 
-      <section>
+      <!-- <section class="card-container">
+        <button class="card flip-card btn-ghost text-turquoise" type="button">&gt;_</button>
+        <div class="card">
+          <div class="front">
+            <h3>flex-grid-12 flex-spacing-1</h3>
+            <div class="flex-grid-12 flex-spacing-1">
+              <div class="bg-yellow flex-item-2">flex-item-2</div>
+              <div class="bg-orange flex-item-4">flex-item-4</div>
+              <div class="bg-turquoise flex-item-3">flex-item-3</div>
+              <div class="bg-orange flex-item-3">flex-item-3</div>
+              <div class="bg-turquoise flex-item-6">flex-item-6</div>
+              <div class="bg-orange flex-item-2">flex-item-2</div>
+              <div class="bg-yellow flex-item-4">flex-item-4</div>
+              <div class="bg-orange flex-item-5">flex-item-5</div>
+              <div class="bg-yellow flex-item-4">flex-item-4</div>
+              <div class="bg-turquoise flex-item-3">flex-item-3</div>
+              <div class="bg-yellow flex-item-2">flex-item-2</div>
+              <div class="bg-turquoise flex-item-2">flex-item-2</div>
+              <div class="bg-yellow flex-item-2">flex-item-2</div>
+              <div class="bg-turquoise flex-item-2">flex-item-2</div>
+              <div class="bg-orange flex-item-2">flex-item-2</div>
+              <div class="bg-yellow flex-item-2">flex-item-2</div>
+            </div>
+          </div>
+          <div class="back">
+            <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-grid-12 flex-spacing-1"</span>&gt;
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-4"</span>&gt;</span><span class="text-gray">flex-item-4</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-3"</span>&gt;</span><span class="text-gray">flex-item-3</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-3"</span>&gt;</span><span class="text-gray">flex-item-3</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-6"</span>&gt;</span><span class="text-gray">flex-item-6</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-4"</span>&gt;</span><span class="text-gray">flex-item-4</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-5"</span>&gt;</span><span class="text-gray">flex-item-5</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-4"</span>&gt;</span><span class="text-gray">flex-item-4</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-3"</span>&gt;</span><span class="text-gray">flex-item-3</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+&lt;/div&gt;</span></pre>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="card-container">
         <h3>flex-grid-3 flex-spacing-2</h3>
-        <div class="flex-row flex-grid-3 flex-spacing-2">
+        <div class="flex-grid-3 flex-spacing-2">
           <div class="bg-turquoise flex-item-1">flex-item-1</div>
           <div class="bg-yellow flex-item-2">flex-item-2</div>
           <div class="bg-orange flex-item-3">flex-item-3</div>
@@ -132,7 +214,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="card-container">
         <h3>flex-row flex-spacing-1</h3>
         <div class="flex-row flex-spacing-1">
           <div class="bg-orange flex-item">flex-item</div>
@@ -141,7 +223,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="card-container">
         <h3>flex-col flex-spacing-1</h3>
         <div class="flex-col flex-spacing-1">
           <div class="bg-orange flex-item">flex-item</div>
@@ -151,7 +233,7 @@
       </section>
 
       <h2>Alignments</h2>
-      <section>
+      <section class="card-container">
         <h3>flex-grid-4 flex-align-between-start</h3>
         <div class="flex-grid-4 flex-align-between-start">
           <div class="bg-orange flex-item-1">flex-item-1</div>
@@ -161,7 +243,7 @@
           <div class="bg-orange flex-item-1">flex-item-1</div>
         </div>
       </section>
-      <section>
+      <section class="card-container">
         <h3>flex-row flex-align-center + height: 144px</h3>
         <div class="flex-row flex-align-center" style="height: 9rem">
           <div class="bg-orange"></div>
@@ -169,7 +251,7 @@
           <div class="bg-turquoise"></div>
         </div>
       </section>
-      <section>
+      <section class="card-container">
         <h3>flex-row flex-align-between-end + height: 144px</h3>
         <div class="flex-row flex-align-between-end" style="height: 9rem">
           <div class="bg-orange"></div>
@@ -177,7 +259,7 @@
           <div class="bg-turquoise"></div>
         </div>
       </section>
-      <section>
+      <section class="card-container">
         <h3>flex-col flex-align-start-end</h3>
         <div class="flex-col flex-align-start-end">
           <div class="bg-orange"></div>
@@ -187,7 +269,7 @@
       </section>
 
       <h2>Nesting</h2>
-      <section>
+      <section class="card-container">
         <h3>flex-row flex-spacing-1 > flex-item flex-col flex-spacing-1</h3>
         <div class="flex-row flex-spacing-1">
           <div class="flex-item flex-col flex-spacing-1">
@@ -227,7 +309,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="card-container">
         <h3>flex-grid-2 flex-grid-tablet-3 flex-grid-laptop-4 flex-grid-desktop-6 flex-spacing-1</h3>
         <div class="flex-grid-2 flex-grid-tablet-3 flex-grid-laptop-4 flex-grid-desktop-6 flex-spacing-1">
           <div class="bg-turquoise flex-item-1">flex-item-1</div>
