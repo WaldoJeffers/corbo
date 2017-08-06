@@ -10,8 +10,8 @@
   font-family: 'Avenir Next LT Pro';
   font-stretch: normal;
   font-style: normal;
-  font-weight: 600;
-  src: local('Avenir Next LT Pro Demi'), url('fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.woff') format('woff');
+  font-weight: 500;
+  src: local('Avenir Next LT Pro Regular'), url('fonts/AvenirNextLTPro/AvenirNextLTPro-Medium.otf') format('opentype');
 }
 
 @font-face {
@@ -37,9 +37,11 @@ a{
   text-decoration: none;
 }
 
+button{cursor: pointer}
+
 body{
-  font-family: 'Avenir Next LT Pro';
   color: darkslategray;
+  font-family: 'Avenir Next LT Pro';
 }
 
 h1{
@@ -47,6 +49,44 @@ h1{
   font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+h2{
+  font-weight:600;
+  font-size: 1.35rem;
+  /*color: #607080;*/
+  /*font-family: Quicksand;*/
+  /*font-family: 'Varela Round', 'Source Sans Pro';*/
+}
+
+h3{
+  text-transform: uppercase;
+  font-weight: 500;
+  color: darkslategray;
+  padding: 1rem 0.75rem;
+  height: 3rem;
+  margin: 0;
+  font-size: 0.875rem;
+
+  /*font-family: 'Source Sans Pro';*/
+}
+
+h4{
+  text-transform: uppercase;
+  font-weight: 400;
+  color: darkslategray;
+  padding: 1rem 0.75rem 0.5rem;
+  margin-bottom: 0;
+  font-size: 0.75rem;
+}
+
+[class*="item-"]{
+  padding: 1rem;
+  color: #444;
+  font-weight: 600;
+  font-size: 0.875rem;
+  min-height: 3rem;
+  min-width: 3rem;
 }
 
 .brand span{
@@ -77,10 +117,9 @@ h1{
   backface-visibility: hidden; /* useless unless the card has no front & back elements */
 }
 
-button{cursor: pointer}
 
 
-section button.flip-card{
+button.flip-card{
   height: 3rem;
   padding: 1rem;
   position: absolute;
@@ -90,16 +129,16 @@ section button.flip-card{
   z-index: 2;
 }
 
-section button.flip-card:focus{outline: none;}
-
-section .card .front, section .card .back{
+.card .front, section .card .back{
   border-radius: 3px;
-  overflow: hidden;
+  overflow: hidden; /* otherwise, border-radius does not work on child elements */
 }
-section .card .front{background-color: whitesmoke}
-/*section .card .back{background-color: darkslategray}*/
 
-section .flip-card:focus, section .flip-card:focus + .card{transform: rotateY(180deg)}
+.card .front{background-color: whitesmoke}
+
+.flip-card:focus, .flip-card:focus + .card{transform: rotateY(180deg)}
+
+ul{padding-left: 1rem}
 
 .close{
   content: "×";
@@ -132,38 +171,12 @@ section .flip-card:focus, section .flip-card:focus + .card{transform: rotateY(18
 
 .resizable:active{width: 0}
 
-h3{
-  text-transform: uppercase;
-  font-weight: 400;
-  color: darkslategray;
-  padding: 1rem 0.75rem;
-  height: 3rem;
-  margin: 0;
-  font-size: 1rem;
-}
 
-h4{
-  text-transform: uppercase;
-  font-weight: 400;
-  color: darkslategray;
-  padding: 1rem 0.75rem 0.5rem;
-  margin-bottom: 0;
-  font-size: 0.75rem;
-}
 
 section {
   /*border-radius: 3px;*/
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   /*overflow: hidden;*/ /* allow corner/border clipping */
-}
-
-[class*="bg-"]{
-  padding: 1rem;
-  color: #444;
-  font-weight: 600;
-  font-size: 0.875rem;
-  min-height: 3rem;
-  min-width: 3rem;
 }
 
 pre{
@@ -173,9 +186,8 @@ pre{
   padding: 0.25rem 1rem;
 }
 
-section > div[class*="flex-spacing"] > div{border-radius: 2px}
+[class*="flex-spacing"] > div{border-radius: 2px}
 
-ul{padding-left: 1rem}
 
 .text-gray{color: rgb(197, 200, 198)}
 .text-blue{color: rgb(131, 203, 247)}
@@ -183,9 +195,9 @@ ul{padding-left: 1rem}
 .text-turquoise{color: mediumturquoise}
 .text-orange{color: lightsalmon}
 .text-yellow{color: wheat}
-.bg-turquoise{background-color: mediumturquoise}
-.bg-orange{background-color: lightsalmon}
-.bg-yellow{background-color: wheat}
+.item-turquoise{background-color: mediumturquoise}
+.item-orange{background-color: lightsalmon}
+.item-yellow{background-color: wheat}
 .bg-gray{background-color: whitesmoke}
 
 .menu-item{
@@ -193,6 +205,7 @@ ul{padding-left: 1rem}
   text-transform: lowercase;
   font-weight: 700;
   font-size: 1.15rem;
+  /*font-family: Mada;*/
 }
 
 .menu-item-img{line-height: 0}
@@ -207,6 +220,7 @@ ul{padding-left: 1rem}
   position: sticky;
   top: 2rem;
   border-left: 1px solid #999;
+  margin-left: 2rem;
   /*text-align: right;*/
 }
 

@@ -38,84 +38,86 @@
           <p>A row is a simple container which stack its children in a row, forming columns.</p>
           <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-row"</span>&gt;&lt;/div&gt;</span></pre>
           <p>Inside a row, there is no CSS class to add to the row's children. Every child will stack in the row, taking only the space required by its content.</p>
-          <div class="flex-row">
-            <div class="bg-turquoise">c</div>
-            <div class="bg-yellow">o</div>
-            <div class="bg-orange">r</div>
-            <div class="bg-yellow">b</div>
-            <div class="bg-orange">o</div>
-          </div>
-          <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-row"</span>&gt;
-  &lt;div&gt;<span class="text-gray">c</span>&lt;/div&gt;
-  &lt;div&gt;<span class="text-gray">o</span>&lt;/div&gt;
-  &lt;div&gt;<span class="text-gray">r</span>&lt;/div&gt;
-  &lt;div&gt;<span class="text-gray">b</span>&lt;/div&gt;
-  &lt;div&gt;<span class="text-gray">o</span>&lt;/div&gt;
-&lt;/div&gt;</span></pre>
+          <section>
+            <div class="flex-row bg-gray">
+              <div class="item-turquoise"></div>
+              <div class="item-yellow"></div>
+              <div class="item-orange"></div>
+            </div>
+            <pre>
+<span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-row"</span>&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;</span>
+</pre>
+          </section>
           <p>However, if you want one or several of the row's children to take as much space as available, just add the <code>flex-item</code> class to them.</p>
-          <div class="flex-row">
-            <div class="bg-turquoise">c</div>
-            <div class="bg-yellow flex-item">o</div>
-            <div class="bg-orange">r</div>
-            <div class="bg-yellow">b</div>
-            <div class="bg-orange flex-item">o</div>
-          </div>
-          <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-row"</span>&gt;
-  &lt;div&gt;<span class="text-gray">c</span>&lt;/div&gt;
-  &lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">o</span>&lt;/div&gt;
-  &lt;div&gt;<span class="text-gray">r</span>&lt;/div&gt;
-  &lt;div&gt;<span class="text-gray">b</span>&lt;/div&gt;
-  &lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">o</span>&lt;/div&gt;
-&lt;/div&gt;</span></pre>
+          <section>
+            <div class="flex-row bg-gray">
+              <div class="item-turquoise"></div>
+              <div class="item-yellow flex-item">flex-item</div>
+              <div class="item-orange"></div>
+            </div>
+<pre>
+<span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-row"</span>&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">flex-item</span>&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</span>
+</pre>
+          </section>
           <h3 id="components-column">Column</h3>
           <p>A column is equivalent to a row, the only difference residing in items stacking vertically instead of horizontally. It is declared using the <code>flex-column</code> (or <code>flex-col</code>) class.</p>
           <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-col"</span>&gt;&lt;/div&gt;</span></pre>
           <p>Like a row's children, a column's children don't need any special class to work.</p>
-          <div class="flex-col">
-            <div class="bg-turquoise">c</div>
-            <div class="bg-yellow">o</div>
-            <div class="bg-orange">r</div>
-            <div class="bg-yellow">b</div>
-            <div class="bg-orange">o</div>
-          </div>
-          <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-col"</span>&gt;
-  &lt;div&gt;<span class="text-gray">c</span>&lt;/div&gt;
-  &lt;div&gt;<span class="text-gray">o</span>&lt;/div&gt;
-  &lt;div&gt;<span class="text-gray">r</span>&lt;/div&gt;
-  &lt;div&gt;<span class="text-gray">b</span>&lt;/div&gt;
-  &lt;div&gt;<span class="text-gray">o</span>&lt;/div&gt;
-&lt;/div&gt;</span></pre>
-          <p>Also like the row container, if you need one of the column's children to take as much as possible, just add a <code>flex-item</code> class to it. However, as block elements have they height property set to <code>auto</code> by default, <strong>adding this class will have no effect if the column does not have a custom height</strong>.</p>
-          <div class="flex-col" style="height: 300px">
-            <div class="bg-turquoise">c</div>
-            <div class="bg-yellow flex-item">o</div>
-            <div class="bg-orange">r</div>
-            <div class="bg-yellow">b</div>
-            <div class="bg-orange flex-item">o</div>
-          </div>
-          <pre><span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-col"</span> style=<span class="text-green">"height: 300px"</span></span>&gt;
-  &lt;div&gt;<span class="text-gray">c</span>&lt;/div&gt;
-  &lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">o</span>&lt;/div&gt;
-  &lt;div&gt;<span class="text-gray">r</span>&lt;/div&gt;
-  &lt;div&gt;<span class="text-gray">b</span>&lt;/div&gt;
-  &lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">o</span>&lt;/div&gt;
-&lt;/div&gt;</span></pre>
+          <section>
+            <div class="flex-col bg-gray">
+              <div class="item-orange"></div>
+              <div class="item-yellow"></div>
+              <div class="item-turquoise"></div>
+            </div>
+<pre>
+<span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-col"</span>&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</span>
+</pre>
+          </section>
+          <p>As for a row container, if you need one of the column's children to take as much as possible, just add a <code>flex-item</code> class to it. However, as block elements have they height property set to <code>auto</code> by default, <strong>adding this class will have no effect if the column does not have a fixed height</strong>.</p>
+          <section>
+            <div class="flex-col bg-gray" style="height: 200px">
+              <div class="item-orange"></div>
+              <div class="item-yellow flex-item">flex-item</div>
+              <div class="item-turquoise"></div>
+            </div>
+<pre>
+<span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-col"</span> style=<span class="text-green">"height: 200px"</span></span>&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">flex-item</span>&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</span>
+</pre>
+          </section>
           <h3 id="components-grid">Grid</h3>
           <p>A grid is a component which allows you to have control over the size and the number of items per line to be displayed. Contrary to a row or a column, which just stack items on the same line, a grid will let you define how many items should be displayed before wrapping, and how much space they should take. It's perfect for designing a global layout, or displaying an image gallery. A grid is defined using the <code>flex-grid-{GRID_SIZE}</code>, where <code>GRID_SIZE</code> is the number of items each line will have.</p>
           <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-grid-3"</span>&gt;&lt;/div&gt;</span></pre>
           <p>Like a row or a column's children, a grid's children do not need any special CSS class. Each child will take <code>1/GRID_SIZE</code> of the grid's available space.</p>
-          <div class="flex-row flex-grid-3">
-            <div class="bg-orange">We're all equal to 1/3 of the total?</div>
-            <div class="bg-yellow">Yup</div>
-            <div class="bg-turquoise">But no .flex-item-1 needed</div>
-            <div class="bg-turquoise">Imagine how boring...</div>
-            <div class="bg-orange">flex-item-1</div>
-            <div class="bg-yellow">flex-item-1</div>
-            <div class="bg-yellow">Stop! I'm bored already</div>
-            <div class="bg-turquoise">fle... Say flex-item-1 one more time</div>
-            <div class="bg-orange">I double dare you!</div>
-          </div>
-          <pre><span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-row flex-grid-3"</span></span>&gt;
+          <section>
+            <div class="flex-row flex-grid-3 bg-gray">
+              <div class="item-orange"></div>
+              <div class="item-yellow"></div>
+              <div class="item-turquoise"></div>
+              <div class="item-turquoise"></div>
+              <div class="item-orange"></div>
+              <div class="item-yellow"></div>
+              <div class="item-yellow"></div>
+              <div class="item-turquoise"></div>
+              <div class="item-orange"></div>
+            </div>
+<pre>
+<span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-row flex-grid-3"</span></span>&gt;
   &lt;div&gt;&lt;/div&gt;
   &lt;div&gt;&lt;/div&gt;
   &lt;div&gt;&lt;/div&gt;
@@ -125,24 +127,27 @@
   &lt;div&gt;&lt;/div&gt;
   &lt;div&gt;&lt;/div&gt;
   &lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;</span></pre>
+&lt;/div&gt;</span>
+</pre>
+          </section>
           <p>You can create a grid of any size, by changing <code>GRID_SIZE</code>. The idea behing that is to avoid any useless mental calculation. If you have a design which features 3 columns, why would you need to create 3 <code>col-4</code> columns? Many other CSS frameworks use a 12 columns grid, but some even use a 24 columns, like Ant Design. This is unnecessary, and makes your code harder to understand. If you want to use non-standard grid sizes, like 24, or even 100 if you need to think in percentages, you might need to <a href="#customization">customize</a> corbo to generate the necessary code. Default sizes include 2, 3, 4, 12 columns.</p>
-          <div class="flex-grid-4">
-            <div class="bg-yellow"></div>
-            <div class="bg-orange"></div>
-            <div class="bg-turquoise"></div>
-            <div class="bg-yellow"></div>
-            <div class="bg-turquoise"></div>
-            <div class="bg-yellow"></div>
-            <div class="bg-orange"></div>
-            <div class="bg-turquoise"></div>
-            <div class="bg-orange"></div>
-            <div class="bg-turquoise"></div>
-            <div class="bg-yellow"></div>
-            <div class="bg-orange"></div>
-          </div>
-          <pre>
-&lt;div class="flex-grid-4"&gt;
+          <section>
+            <div class="flex-grid-4 bg-gray">
+              <div class="item-yellow"></div>
+              <div class="item-orange"></div>
+              <div class="item-turquoise"></div>
+              <div class="item-yellow"></div>
+              <div class="item-turquoise"></div>
+              <div class="item-yellow"></div>
+              <div class="item-orange"></div>
+              <div class="item-turquoise"></div>
+              <div class="item-orange"></div>
+              <div class="item-turquoise"></div>
+              <div class="item-yellow"></div>
+              <div class="item-orange"></div>
+            </div>
+<pre>
+<span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-row flex-grid-4"</span></span>&gt;
   &lt;div&gt;&lt;/div&gt;
   &lt;div&gt;&lt;/div&gt;
   &lt;div&gt;&lt;/div&gt;
@@ -155,87 +160,106 @@
   &lt;div&gt;&lt;/div&gt;
   &lt;div&gt;&lt;/div&gt;
   &lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-          </pre>
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</span>
+</pre>
+          </section>
           <p>If you need to have items of different sizes inside your grid, that's easy! Just add a <code>flex-item-{ITEM_SIZE}</code> where <code>ITEM_SIZE</code> is an integer between 1 and <code>GRID_SIZE</code>. The item on which you apply the class will logically take <code>ITEM_SIZE/GRID_SIZE</code> of the grid's available space. The <code>flex-item-1</code> class corresponds to the default size for items on which you do no not specify a class.</p>
-          <div class="flex-row flex-grid-3">
-            <div class="bg-turquoise flex-item-1">My width is 1/3<sup>rd</sup> of the total</div>
-            <div class="bg-yellow flex-item-2">Mine is 2/3<sup>rd</sup>! I win</div>
-            <div class="bg-orange flex-item-3">Can't touch this</div>
-            <div class="bg-yellow flex-item-2">My width is 2/3<sup>rd</sup> of the total</div>
-            <div class="bg-turquoise flex-item-1">I don't need that much space</div>
-            <div class="bg-orange flex-item-1">Me neither</div>
-            <div class="bg-turquoise flex-item-1">Me neither</div>
-            <div class="bg-yellow flex-item-1">Neither do I</div>
-          </div>
-          <pre>
-&lt;div class="flex-row flex-grid-3"&gt;
-  &lt;div class="flex-item-1"&gt;My width is 1/3&lt;sup&gt;rd&lt;/sup&gt; of the total&lt;/div&gt;
-  &lt;div class="flex-item-2"&gt;Mine is 2/3&lt;sup&gt;rd&lt;/sup&gt;! I win&lt;/div&gt;
-  &lt;div class="flex-item-3"&gt;Can't touch this&lt;/div&gt;
-  &lt;div class="flex-item-2"&gt;My width is 2/3&lt;sup&gt;rd&lt;/sup&gt; of the total&lt;/div&gt;
-  &lt;div class="flex-item-1"&gt;I don't need that much space&lt;/div&gt;
-  &lt;div class="flex-item-1"&gt;Me neither&lt;/div&gt;
-  &lt;div class="flex-item-1"&gt;Me neither&lt;/div&gt;
-  &lt;div class="flex-item-1"&gt;Neither do I&lt;/div&gt;
-&lt;/div&gt;
-          </pre>
+          <section>
+            <div class="flex-row flex-grid-3 bg-gray">
+              <div class="item-turquoise flex-item-1">flex-item-1</div>
+              <div class="item-yellow flex-item-2">flex-item-2</div>
+              <div class="item-orange flex-item-3">flex-item-3</div>
+              <div class="item-yellow flex-item-2">flex-item-2</div>
+              <div class="item-turquoise flex-item-1">flex-item-1</div>
+              <div class="item-orange flex-item-1">flex-item-1</div>
+              <div class="item-turquoise flex-item-1">flex-item-1</div>
+              <div class="item-yellow flex-item-1">flex-item-1</div>
+            </div>
+<pre>
+<span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-row flex-grid-3"</span></span>&gt;
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-3"</span>&gt;</span><span class="text-gray">flex-item-3</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+&lt;/div&gt;</span>
+</pre>
+          </section>
           <h3 id="components-spacing">Spacing</h3>
           <p>You might want to add some spacing to your components. <strong><span class="text-turquoise">C</span><span class="text-orange">o</span><span class="text-turquoise">r</span><span class="text-yellow">b</span><span class="text-orange">o</span></strong> has helper classes that will help you add gutter to your row, grid or column. A spacing is applied using the <code>flex-spacing-{SIZE}</code> where <code>size</code> is an integer, creating a gutter of <code>{SIZE}rem</code> between items. Available spacing sizes are 1, 2 by default but you can add more through <a href="#customization">customization</a>. Contrary to most CSS frameworks, the gutter is creating by setting a margin on items, leaving you complete control over them items' padding.</p>
-          <div class="flex-row flex-spacing-1">
-            <div class="bg-turquoise">c</div>
-            <div class="bg-yellow">o</div>
-            <div class="bg-orange">r</div>
-            <div class="bg-yellow">b</div>
-            <div class="bg-orange">o</div>
-          </div>
-          <pre>
-&lt;div class="flex-row flex-spacing-1"&gt;
-  &lt;div&gt;c&lt;/div&gt;
-  &lt;div&gt;o&lt;/div&gt;
-  &lt;div&gt;r&lt;/div&gt;
-  &lt;div&gt;b&lt;/div&gt;
-  &lt;div&gt;o&lt;/div&gt;
-&lt;/div&gt;
-          </pre>
-          <div class="flex-row flex-spacing-2">
-            <div class="bg-turquoise">c</div>
-            <div class="bg-yellow flex-item">o</div>
-            <div class="bg-orange">r</div>
-            <div class="bg-yellow">b</div>
-            <div class="bg-orange flex-item">o</div>
-          </div>
-          <pre>
-&lt;div class="flex-row flex-spacing-2"&gt;
-  &lt;div&gt;c&lt;/div&gt;
-  &lt;div class="flex-item"&gt;o&lt;/div&gt;
-  &lt;div&gt;r&lt;/div&gt;
-  &lt;div&gt;b&lt;/div&gt;
-  &lt;div class="flex-item"&gt;o&lt;/div&gt;
-&lt;/div&gt;
-          </pre>
-          <div class="flex-row flex-grid-3 flex-spacing-1">
-            <div class="bg-turquoise flex-item-1">This feels much better</div>
-            <div class="bg-yellow flex-item-2">I couldn't breathe!</div>
-            <div class="bg-orange flex-item-3">Still can't touch this</div>
-            <div class="bg-yellow flex-item-2">The design guy was right</div>
-            <div class="bg-turquoise flex-item-1">About what?</div>
-            <div class="bg-orange flex-item-1">Whitespace FTW bro!</div>
-            <div class="bg-turquoise flex-item-1">Ah yes</div>
-            <div class="bg-yellow flex-item-1">Makes sense now</div>
-          </div>
-          <pre>
-&lt;div class="flex-row flex-grid-3 flex-spacing-1"&gt;
-  &lt;div class="flex-item-1"&gt;This feels much better&lt;/div&gt;
-  &lt;div class="flex-item-2"&gt;I couldn't breathe&lt;/div&gt;
-  &lt;div class="flex-item-3"&gt;Still can't touch this&lt;/div&gt;
-  &lt;div class="flex-item-2"&gt;The design was guy was right&lt;/div&gt;
-  &lt;div class="flex-item-1"&gt;About space?&lt;/div&gt;
-  &lt;div class="flex-item-1"&gt;White space FTW bro!&lt;/div&gt;
-  &lt;div class="flex-item-1"&gt;Ah yes&lt;/div&gt;
-  &lt;div class="flex-item-1"&gt;Makes sense now&lt;/div&gt;
-&lt;/div&gt;
-          </pre>
+          <p>Spacing can be applied on rows:</p>
+          <section>
+            <div class="flex-row flex-spacing-1 bg-gray">
+              <div class="item-turquoise"></div>
+              <div class="item-yellow"></div>
+              <div class="item-orange"></div>
+            </div>
+<pre>
+<span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-row flex-spacing-1"</span></span>&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</span>
+</pre>
+          </section>
+          <section>
+            <div class="flex-row flex-spacing-2 bg-gray">
+              <div class="flex-item item-turquoise">flex-item</div>
+              <div class="flex-item item-yellow">flex-item</div>
+              <div class="flex-item item-orange">flex-item</div>
+            </div>
+<pre>
+<span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-row flex-spacing-2"</span>&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div <span class="text-gray">class=</span><span class="text-green">"flex-item"</span>&gt;<span class="text-gray">flex-item</span>&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</span>
+</pre>
+          </section>
+          <p>columns,</p>
+          <section>
+            <div class="flex-col flex-spacing-1 bg-gray">
+              <div class="item-yellow"></div>
+              <div class="item-turquoise"></div>
+              <div class="item-orange"></div>
+            </div>
+<pre>
+  <span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-col flex-spacing-1"</span>&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</span>
+</pre>
+          </section>
+          <p>Or grids:</p>
+          <section>
+            <div class="flex-grid-3 flex-spacing-1 bg-gray">
+              <div class="item-turquoise flex-item-1">flex-item-1</div>
+              <div class="item-yellow flex-item-2">flex-item-2</div>
+              <div class="item-orange flex-item-3">flex-item-3</div>
+              <div class="item-yellow flex-item-2">flex-item-2</div>
+              <div class="item-turquoise flex-item-1">flex-item-1</div>
+              <div class="item-orange flex-item-1">flex-item-1</div>
+              <div class="item-turquoise flex-item-1">flex-item-1</div>
+              <div class="item-yellow flex-item-1">flex-item-1</div>
+            </div>
+<pre>
+<span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-grid-3 flex-spacing-1"</span></span>&gt;
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-3"</span>&gt;</span><span class="text-gray">flex-item-3</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-2"</span>&gt;</span><span class="text-gray">flex-item-2</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+  <span class="text-blue">&lt;div <span class="text-gray">class=<span class="text-green">"flex-item-1"</span>&gt;</span><span class="text-gray">flex-item-1</span>&lt;/div&gt;</span>
+&lt;/div&gt;</span>
+</pre>
+          </section>
           <h3 id="components-alignment">Alignment</h3>
           <p><strong><span class="text-turquoise">C</span><span class="text-orange">o</span><span class="text-turquoise">r</span><span class="text-yellow">b</span><span class="text-orange">o</span></strong> also has helper classes to align items inside containers (rows, columns or grids). All items can be aligned along the main axis, and the cross axis. An alignment is defined using the <code>flex-align-{MAIN_AXIS}[-{CROSS_AXIS}]</code> class, where <code>MAIN_AXIS</code> can take any value among <code>start, end, center, around, between</code> and <code>CROSS_AXIS</code>, any value among <code>start, end, center, stretch</code>. If <code>MAIN_AXIS</code> and <code>CROSS_AXIS</code> are equal, the class can be shorthanded to <code>flex-align-{MAIN_AXIS}</code>.</p>
           <p>&#x26A0; Alignment properties affecting the vertical axis (cross axis of a row, or main axis of a column) <strong>might not have any effect</strong> if the container element does not have a custom height.</p>
@@ -262,23 +286,34 @@
             <li><code>flex-between-center</code></li>
             <li><code>flex-between-stretch</code></li>
           </ul>
-          <div class="flex-row flex-align-around-start">
-            <div class="bg-orange">So much space around us</div>
-            <div class="bg-yellow">I feel free</div>
-            <div class="bg-turquoise">I feel alone now</div>
-          </div>
+          <section>
+            <div class="flex-row flex-align-around-start bg-gray">
+              <div class="item-orange"></div>
+              <div class="item-yellow"></div>
+              <div class="item-turquoise"></div>
+            </div>
 <pre>
-  &lt;div class="flex-row flex-align-around-start"&gt;
-    &lt;div&gt;So much space around us&lt;/div&gt;
-    &lt;div&gt;I feel free&lt;/div&gt;
-    &lt;div&gt;I feel alone now&lt;/div&gt;
-  &lt;/div&gt;
+<span class="text-blue">&lt;div <span class="text-gray">class="<span class="text-green">flex-row flex-align-around-start"</span></span>&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</span>
 </pre>
-          <div class="flex-col flex-align-between-center" style="height: 200px">
-            <div class="bg-orange">We are upside down!</div>
-            <div class="bg-yellow">Please don't fall</div>
-            <div class="bg-turquoise">Still feeling blue</div>
-          </div>
+          </section>
+          <section>
+            <div class="flex-col flex-align-between-center bg-gray" style="height: 200px">
+              <div class="item-orange"></div>
+              <div class="item-yellow"></div>
+              <div class="item-turquoise"></div>
+            </div>
+<pre>
+<span class="text-blue">&lt;div <span class="text-gray">class="<span class="text-green">flex-col flex-align-between-center"</span> style=<span class="text-green">"height: 200px"</span></span>&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</span>
+</pre>
+          </section>
           <h3 id="components-responsive">Responsive</h3>
         </div>
         <nav class="side-nav">
