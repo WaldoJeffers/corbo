@@ -60,24 +60,20 @@ h2{
 }
 
 h3{
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: slategray;
+}
+
+h4{
   text-transform: uppercase;
   font-weight: 500;
-  color: darkslategray;
-  padding: 1rem 0.75rem;
+  padding: 1rem;
   height: 3rem;
   margin: 0;
   font-size: 0.875rem;
 
   /*font-family: 'Source Sans Pro';*/
-}
-
-h4{
-  text-transform: uppercase;
-  font-weight: 400;
-  color: darkslategray;
-  padding: 1rem 0.75rem 0.5rem;
-  margin-bottom: 0;
-  font-size: 0.75rem;
 }
 
 [class*="item-"]{
@@ -180,25 +176,52 @@ section {
 }
 
 pre{
-  background-color: darkslategray;
+  background-color: whitesmoke;
   font-size: 1.25rem;
   margin: 0;
   padding: 0.25rem 1rem;
+  border-radius: 2px;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th{
+  border: 1px solid lightgray;
+  padding: 0.5rem 1rem;
+}
+
+th{font-weight: 500}
+th:first-child{border: 0}
+
+td:nth-child(n+2){
+  text-align: center;
+}
+
+tbody tr:nth-child(2n+1){
+  /*background: whitesmoke;*/
 }
 
 [class*="flex-spacing"] > div{border-radius: 2px}
 
-
-.text-gray{color: rgb(197, 200, 198)}
+/* from Atom Dark Theme */
+/*.text-gray{color: rgb(197, 200, 198)}
 .text-blue{color: rgb(131, 203, 247)}
-.text-green{color: rgb(168, 255, 96)}
+.text-green{color: rgb(168, 255, 96)}*/
+
+.bg-gray{background-color: whitesmoke}
+.bg-green{background-color: #d5f599}
+.text-blue{color: #6e99b3}
+.text-gray{color: #737373}
+.text-green{color: #88c514}
 .text-turquoise{color: mediumturquoise}
 .text-orange{color: lightsalmon}
 .text-yellow{color: wheat}
 .item-turquoise{background-color: mediumturquoise}
 .item-orange{background-color: lightsalmon}
 .item-yellow{background-color: wheat}
-.bg-gray{background-color: whitesmoke}
 
 .menu-item{
   margin-left: 2.5rem;

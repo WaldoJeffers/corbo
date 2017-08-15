@@ -23,10 +23,12 @@
       <div class="flex-row flex-nowrap">
         <div class="flex-item">
           <h2>Introduction</h2>
+          <p>I created CORBO because I often found myself frustrated with the layout possibilities offered by the different frameworks I was using. As a result, I often resorted to copy-pasting custom flexbox code I wrote from project to project, and it quickly became hard to maintain. I know there are other flexbox libraries out there, but none of them offered the features I needed whilst being dead simple. So that's why I wrote corbo, the <i>definitive</i> flexbox library. It can create any layout you want, you only need to use CSS classes (you don't have to write any CSS code), everything can be customized (but it doesn't have to be). And before you say anything, yes I know about <i>that</i> XKCD comic.</p>
+          <p>OK, are you ready to give it a shot?</p>
           <h2 id="getting_started">Getting started</h2>
           <h3 id="getting_started-installation">Installation</h2>
           <p>Install corbo via npm:</p>
-          <pre class="text-green">npm install --save corbo</pre>
+          <pre class="text-gray">npm install --save corbo</pre>
           <p>and import it in your app if you use a module bundler (like Webpack, or Rollup).</p>
           <pre><span class="text-gray">import from </span><span class="text-green">'corbo'</span></pre>
           <h2 id="components">Components</h2>
@@ -39,22 +41,22 @@
           <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-row"</span>&gt;&lt;/div&gt;</span></pre>
           <p>Inside a row, there is no CSS class to add to the row's children. Every child will stack in the row, taking only the space required by its content.</p>
           <section>
-            <div class="flex-row bg-gray">
+            <div class="flex-row">
               <div class="item-turquoise"></div>
               <div class="item-yellow"></div>
               <div class="item-orange"></div>
             </div>
-            <pre>
+<pre>
 <span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-row"</span>&gt;
-    &lt;div&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;/div&gt;
-  &lt;/div&gt;</span>
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</span>
 </pre>
           </section>
           <p>However, if you want one or several of the row's children to take as much space as available, just add the <code>flex-item</code> class to them.</p>
           <section>
-            <div class="flex-row bg-gray">
+            <div class="flex-row">
               <div class="item-turquoise"></div>
               <div class="item-yellow flex-item">flex-item</div>
               <div class="item-orange"></div>
@@ -72,7 +74,7 @@
           <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-col"</span>&gt;&lt;/div&gt;</span></pre>
           <p>Like a row's children, a column's children don't need any special class to work.</p>
           <section>
-            <div class="flex-col bg-gray">
+            <div class="flex-col">
               <div class="item-orange"></div>
               <div class="item-yellow"></div>
               <div class="item-turquoise"></div>
@@ -87,7 +89,7 @@
           </section>
           <p>As for a row container, if you need one of the column's children to take as much as possible, just add a <code>flex-item</code> class to it. However, as block elements have they height property set to <code>auto</code> by default, <strong>adding this class will have no effect if the column does not have a fixed height</strong>.</p>
           <section>
-            <div class="flex-col bg-gray" style="height: 200px">
+            <div class="flex-col" style="height: 200px">
               <div class="item-orange"></div>
               <div class="item-yellow flex-item">flex-item</div>
               <div class="item-turquoise"></div>
@@ -105,7 +107,7 @@
           <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-grid-3"</span>&gt;&lt;/div&gt;</span></pre>
           <p>Like a row or a column's children, a grid's children do not need any special CSS class. Each child will take <code>1/GRID_SIZE</code> of the grid's available space.</p>
           <section>
-            <div class="flex-row flex-grid-3 bg-gray">
+            <div class="flex-row flex-grid-3">
               <div class="item-orange"></div>
               <div class="item-yellow"></div>
               <div class="item-turquoise"></div>
@@ -130,9 +132,9 @@
 &lt;/div&gt;</span>
 </pre>
           </section>
-          <p>You can create a grid of any size, by changing <code>GRID_SIZE</code>. The idea behing that is to avoid any useless mental calculation. If you have a design which features 3 columns, why would you need to create 3 <code>col-4</code> columns? Many other CSS frameworks use a 12 columns grid, but some even use a 24 columns, like Ant Design. This is unnecessary, and makes your code harder to understand. If you want to use non-standard grid sizes, like 24, or even 100 if you need to think in percentages, you might need to <a href="#customization">customize</a> corbo to generate the necessary code. Default sizes include 2, 3, 4, 12 columns.</p>
+          <p>You can create a grid of any size, by changing <code>GRID_SIZE</code>. The idea behind that is to avoid any useless mental calculation. If you have a design which features 3 columns, why would you need to create 3 <code>col-4</code> columns? Many other CSS frameworks use a 12 columns grid, but some even use a 24 columns, like Ant Design. This is unnecessary, and makes your code harder to understand. If you want to use non-standard grid sizes, like 24, or even 100 if you need to think in percentages, you might need to <a href="#customization">customize</a> corbo to generate the necessary code. Default sizes include 2, 3, 4, 12 columns.</p>
           <section>
-            <div class="flex-grid-4 bg-gray">
+            <div class="flex-grid-4">
               <div class="item-yellow"></div>
               <div class="item-orange"></div>
               <div class="item-turquoise"></div>
@@ -166,7 +168,7 @@
           </section>
           <p>If you need to have items of different sizes inside your grid, that's easy! Just add a <code>flex-item-{ITEM_SIZE}</code> where <code>ITEM_SIZE</code> is an integer between 1 and <code>GRID_SIZE</code>. The item on which you apply the class will logically take <code>ITEM_SIZE/GRID_SIZE</code> of the grid's available space. The <code>flex-item-1</code> class corresponds to the default size for items on which you do no not specify a class.</p>
           <section>
-            <div class="flex-row flex-grid-3 bg-gray">
+            <div class="flex-row flex-grid-3">
               <div class="item-turquoise flex-item-1">flex-item-1</div>
               <div class="item-yellow flex-item-2">flex-item-2</div>
               <div class="item-orange flex-item-3">flex-item-3</div>
@@ -190,10 +192,10 @@
 </pre>
           </section>
           <h3 id="components-spacing">Spacing</h3>
-          <p>You might want to add some spacing to your components. <strong><span class="text-turquoise">C</span><span class="text-orange">o</span><span class="text-turquoise">r</span><span class="text-yellow">b</span><span class="text-orange">o</span></strong> has helper classes that will help you add gutter to your row, grid or column. A spacing is applied using the <code>flex-spacing-{SIZE}</code> where <code>size</code> is an integer, creating a gutter of <code>{SIZE}rem</code> between items. Available spacing sizes are 1, 2 by default but you can add more through <a href="#customization">customization</a>. Contrary to most CSS frameworks, the gutter is creating by setting a margin on items, leaving you complete control over them items' padding.</p>
+          <p>You might want to add some spacing to your components. <strong><span class="text-turquoise">C</span><span class="text-orange">o</span><span class="text-turquoise">r</span><span class="text-yellow">b</span><span class="text-orange">o</span></strong> has helper classes that will help you add gutter to your row, grid or column. A spacing is applied using the <code>flex-spacing-{SIZE}</code> where <code>size</code> is an integer, creating a gutter of <code>{SIZE}rem</code> between items. Available spacing sizes are 1, 2 by default but you can add more through <a href="#customization">customization</a>. Contrary to most CSS frameworks, the gutter is creating by setting a margin on items, leaving you complete control over the items' padding.</p>
           <p>Spacing can be applied on rows:</p>
           <section>
-            <div class="flex-row flex-spacing-1 bg-gray">
+            <div class="flex-row flex-spacing-1">
               <div class="item-turquoise"></div>
               <div class="item-yellow"></div>
               <div class="item-orange"></div>
@@ -207,7 +209,7 @@
 </pre>
           </section>
           <section>
-            <div class="flex-row flex-spacing-2 bg-gray">
+            <div class="flex-row flex-spacing-2">
               <div class="flex-item item-turquoise">flex-item</div>
               <div class="flex-item item-yellow">flex-item</div>
               <div class="flex-item item-orange">flex-item</div>
@@ -222,7 +224,7 @@
           </section>
           <p>columns,</p>
           <section>
-            <div class="flex-col flex-spacing-1 bg-gray">
+            <div class="flex-col flex-spacing-1">
               <div class="item-yellow"></div>
               <div class="item-turquoise"></div>
               <div class="item-orange"></div>
@@ -237,7 +239,7 @@
           </section>
           <p>Or grids:</p>
           <section>
-            <div class="flex-grid-3 flex-spacing-1 bg-gray">
+            <div class="flex-grid-3 flex-spacing-1">
               <div class="item-turquoise flex-item-1">flex-item-1</div>
               <div class="item-yellow flex-item-2">flex-item-2</div>
               <div class="item-orange flex-item-3">flex-item-3</div>
@@ -262,7 +264,7 @@
           </section>
           <h3 id="components-alignment">Alignment</h3>
           <p><strong><span class="text-turquoise">C</span><span class="text-orange">o</span><span class="text-turquoise">r</span><span class="text-yellow">b</span><span class="text-orange">o</span></strong> also has helper classes to align items inside containers (rows, columns or grids). All items can be aligned along the main axis, and the cross axis. An alignment is defined using the <code>flex-align-{MAIN_AXIS}[-{CROSS_AXIS}]</code> class, where <code>MAIN_AXIS</code> can take any value among <code>start, end, center, around, between</code> and <code>CROSS_AXIS</code>, any value among <code>start, end, center, stretch</code>. If <code>MAIN_AXIS</code> and <code>CROSS_AXIS</code> are equal, the class can be shorthanded to <code>flex-align-{MAIN_AXIS}</code>.</p>
-          <p>&#x26A0; Alignment properties affecting the vertical axis (cross axis of a row, or main axis of a column) <strong>might not have any effect</strong> if the container element does not have a custom height.</p>
+          <p><span class="text-orange">&#x26A0;</span> Alignment properties affecting the vertical axis (cross axis of a row, or main axis of a column) <strong>might not have any effect</strong> if the container element does not have a custom height.</p>
           <p>Here is a list of all available values:</p>
           <ul>
             <li><code>flex-start-start</code> (or <code>flex-start</code>)</li>
@@ -287,7 +289,7 @@
             <li><code>flex-between-stretch</code></li>
           </ul>
           <section>
-            <div class="flex-row flex-align-around-start bg-gray">
+            <div class="flex-row flex-align-around-start">
               <div class="item-orange"></div>
               <div class="item-yellow"></div>
               <div class="item-turquoise"></div>
@@ -301,7 +303,7 @@
 </pre>
           </section>
           <section>
-            <div class="flex-col flex-align-between-center bg-gray" style="height: 200px">
+            <div class="flex-col flex-align-between-center" style="height: 200px">
               <div class="item-orange"></div>
               <div class="item-yellow"></div>
               <div class="item-turquoise"></div>
@@ -315,6 +317,66 @@
 </pre>
           </section>
           <h3 id="components-responsive">Responsive</h3>
+          <p>Wrapping and the <code>flex-item</code> utility class help you create fluid layouts. However, if you need a more fine-grained control, <strong><span class="text-turquoise">c</span><span class="text-orange">o</span><span class="text-turquoise">r</span><span class="text-yellow">b</span><span class="text-orange">o</span></strong> also features helper classes to control grids' responsive behaviour. They are declared using: <code>flex-grid-{BREAKPOINT}-{SIZE}</code> where <code>BREAKPOINT</code> is the name of the desired breakpoint.</p>
+          <p>By default, there are 5 breakpoints (this can be <a href="#customization">customized</a>):</p>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Portrait phone<br>(&lt; XXXpx)</th>
+                <th>Landscape phone<br>(&ge; XXXpx)</th>
+                <th>Tablet<br>(&ge; XXXpx)</th>
+                <th>Laptop<br>(&ge; XXXpx)</th>
+                <th>Desktop<br>(&ge; XXXpx)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>flex-grid-{SIZE}</code></td>
+                <td class="bg-green">&check;</td>
+                <td class="bg-green">&check;</td>
+                <td class="bg-green">&check;</td>
+                <td class="bg-green">&check;</td>
+                <td class="bg-green">&check;</td>
+              </tr>
+              <tr>
+                <td><code>flex-grid-phone-{SIZE}</code></td>
+                <td class="bg-gray">&cross;</td>
+                <td class="bg-green">&check;</td>
+                <td class="bg-green">&check;</td>
+                <td class="bg-green">&check;</td>
+                <td class="bg-green">&check;</td>
+              </tr>
+              <tr>
+                <td><code>flex-grid-tablet-{SIZE}</code></td>
+                <td class="bg-gray">&cross;</td>
+                <td class="bg-gray">&cross;</td>
+                <td class="bg-green">&check;</td>
+                <td class="bg-green">&check;</td>
+                <td class="bg-green">&check;</td>
+              </tr>
+              <tr>
+                <td><code>flex-grid-laptop-{SIZE}</code></td>
+                <td class="bg-gray">&cross;</td>
+                <td class="bg-gray">&cross;</td>
+                <td class="bg-gray">&cross;</td>
+                <td class="bg-green">&check;</td>
+                <td class="bg-green">&check;</td>
+              </tr>
+              <tr>
+                <td><code>flex-grid-desktop-{SIZE}</code></td>
+                <td class="bg-gray">&cross;</td>
+                <td class="bg-gray">&cross;</td>
+                <td class="bg-gray">&cross;</td>
+                <td class="bg-gray">&cross;</td>
+                <td class="bg-green">&check;</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><span class="text-orange">&#x26A0;</span> Responsive classes apply to all devices equal or bigger than the one matching the class you use.</p>
+          <h2 id="customization">Customization</h2>
+          <h2 id="support">Support</h2>
+          <h2 id="inspiration">Inspiration</h2>
         </div>
         <nav class="side-nav">
           <ul class="nav-1">
@@ -326,7 +388,6 @@
                 <a href="#getting_started-usage">Usage</a>
               </ul>
             </a>
-            <a href="#customization">Customization</a>
             <a href="#components">
               Components
               <ul class="nav-2">
@@ -338,7 +399,9 @@
                 <a href="#components-responsive">Responsive</a>
               </ul>
             </a>
+            <a href="#customization">Customization</a>
             <a href="#support">Support</a>
+            <a href="#inspiration">Inspiration</a>
           </ul>
         </nav>
       </div>
