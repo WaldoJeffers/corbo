@@ -22,8 +22,8 @@
       </header>
       <div class="flex-row flex-nowrap">
         <div class="flex-item">
-          <h2>Introduction</h2>
-          <p>I created CORBO because I often found myself frustrated with the layout possibilities offered by the different frameworks I was using. As a result, I often resorted to copy-pasting custom flexbox code I wrote from project to project, and it quickly became hard to maintain. I know there are other flexbox libraries out there, but none of them offered the features I needed whilst being dead simple. So that's why I wrote corbo, the <i>definitive</i> flexbox library. It can create any layout you want, you only need to use CSS classes (you don't have to write any CSS code), everything can be customized (but it doesn't have to be). And before you say anything, yes I know about <i>that</i> XKCD comic.</p>
+          <h2 id="introduction">Introduction</h2>
+          <p>I created <strong><span class="text-turquoise">C</span><span class="text-orange">o</span><span class="text-turquoise">r</span><span class="text-yellow">b</span><span class="text-orange">o</span></strong> because I often found myself frustrated with the layout possibilities offered by the different frameworks I was using. As a result, I often resorted to copy-pasting custom flexbox code I wrote from project to project, and it quickly became hard to maintain. I know there are other flexbox libraries out there, but none of them offered the features I needed whilst being dead simple. So that's why I wrote corbo, the <i>definitive</i> flexbox library. It can create any layout you want, you only need to use CSS classes (you don't have to write any CSS code), everything can be customized (but it doesn't have to be). And before you say anything, yes I know about <a href="https://xkcd.com/927/"><i>that</i> XKCD comic</a>.</p>
           <p>OK, are you ready to give it a shot?</p>
           <h2 id="getting_started">Getting started</h2>
           <h3 id="getting_started-installation">Installation</h2>
@@ -72,7 +72,7 @@
           <h3 id="components-column">Column</h3>
           <p>A column is equivalent to a row, the only difference residing in items stacking vertically instead of horizontally. It is declared using the <code>flex-column</code> (or <code>flex-col</code>) class.</p>
           <pre><span class="text-blue">&lt;div <span class="text-gray">class=</span><span class="text-green">"flex-col"</span>&gt;&lt;/div&gt;</span></pre>
-          <p>Like a row's children, a column's children don't need any special class to work.</p>
+          <p>Like rows' children, columns' children don't need any special class to work.</p>
           <section>
             <div class="flex-col">
               <div class="item-orange"></div>
@@ -317,7 +317,7 @@
 </pre>
           </section>
           <h3 id="components-responsive">Responsive</h3>
-          <p>Wrapping and the <code>flex-item</code> utility class help you create fluid layouts. However, if you need a more fine-grained control, <strong><span class="text-turquoise">c</span><span class="text-orange">o</span><span class="text-turquoise">r</span><span class="text-yellow">b</span><span class="text-orange">o</span></strong> also features helper classes to control grids' responsive behaviour. They are declared using: <code>flex-grid-{BREAKPOINT}-{SIZE}</code> where <code>BREAKPOINT</code> is the name of the desired breakpoint.</p>
+          <p>Wrapping and the <code>flex-item</code> utility class help you create fluid layouts. However, if you need a more fine-grained control, <strong><span class="text-turquoise">C</span><span class="text-orange">o</span><span class="text-turquoise">r</span><span class="text-yellow">b</span><span class="text-orange">o</span></strong> also features helper classes to control grids' responsive behaviour. They are declared using: <code>flex-grid-{BREAKPOINT}-{SIZE}</code> where <code>BREAKPOINT</code> is the name of the desired breakpoint.</p>
           <p>By default, there are 5 breakpoints (this can be <a href="#customization">customized</a>):</p>
           <table>
             <thead>
