@@ -317,7 +317,28 @@
 </pre>
           </section>
           <h3 id="components-responsive">Responsive</h3>
-          <p>Wrapping and the <code>flex-item</code> utility class help you create fluid layouts. However, if you need a more fine-grained control, <strong><span class="text-turquoise">C</span><span class="text-orange">o</span><span class="text-turquoise">r</span><span class="text-yellow">b</span><span class="text-orange">o</span></strong> also features helper classes to control grids' responsive behaviour. They are declared using: <code>flex-grid-{BREAKPOINT}-{SIZE}</code> where <code>BREAKPOINT</code> is the name of the desired breakpoint.</p>
+          <p>Wrapping and the <code>flex-item</code> utility class help you create fluid layouts.</p>
+          <div class="flex-row">
+            <div class="flex-item">
+            <div class="bg-gray resizable">
+              <div class="flex-row flex-spacing-1">
+                <div class="item-turquoise flex-item">flex-item</div>
+                <div class="item-yellow flex-item">flex-item</div>
+                <div class="item-orange flex-item">flex-item</div>
+                <div class="item-yellow flex-item">flex-item</div>
+                <div class="item-orange flex-item">flex-item</div>
+                <div class="item-turquoise flex-item">flex-item</div>
+                <div class="item-orange flex-item">flex-item</div>
+                <div class="item-turquoise flex-item">flex-item</div>
+                <div class="item-yellow flex-item">flex-item</div>
+                <div class="item-turquoise flex-item">flex-item</div>
+                <div class="item-yellow flex-item">flex-item</div>
+                <div class="item-orange flex-item">flex-item</div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <p>However, if you need a more fine-grained control, <strong><span class="text-turquoise">C</span><span class="text-orange">o</span><span class="text-turquoise">r</span><span class="text-yellow">b</span><span class="text-orange">o</span></strong> also features helper classes to control grids' responsive behaviour. They are declared using: <code>flex-grid-{BREAKPOINT}-{SIZE}</code> where <code>BREAKPOINT</code> is the name of the desired breakpoint.</p>
           <p>By default, there are 5 breakpoints (this can be <a href="#customization">customized</a>):</p>
           <table>
             <thead>
